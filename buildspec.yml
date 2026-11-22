@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo "Checking that the site files exist"
+      - test -f site/index.html
+      - test -f site/style.css
+      - grep -q "<title>" site/index.html
+artifacts:
+  files:
+    - site/**/*
+    - appspec.yml
